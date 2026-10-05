@@ -32,8 +32,9 @@ def home():
 
         .hero {
             padding: 70px 20px;
-            background: white;
-        }
+            background: white;<a href="/python" class="button">Start Learning</a>
+<a href="/python" class="button">Get Started</a>
+<a href="/login" class="button">Login</a>        }
 
         .hero h1 {
             font-size: 40px;
