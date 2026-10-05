@@ -32,9 +32,8 @@ def home():
 
         .hero {
             padding: 70px 20px;
-            background: white;<a href="/python" class="button">Start Learning</a>
-<a href="/python" class="button">Get Started</a>
-<a href="/login" class="button">Login</a>        }
+            background: white;
+        }
 
         .hero h1 {
             font-size: 40px;
@@ -83,19 +82,21 @@ def home():
         }
 
         footer {
-            margin-top: 30px;
-            padding: 25px;
             background: #222;
             color: white;
+            padding: 20px;
+            margin-top: 30px;
         }
 
         @media (max-width: 600px) {
             .hero h1 {
-                font-size: 32px;
+                font-size: 30px;
             }
 
-            .card {
-                width: 85%;
+            .button {
+                display: block;
+                margin: 12px auto;
+                max-width: 250px;
             }
         }
     </style>
@@ -108,45 +109,43 @@ def home():
 </header>
 
 <section class="hero">
-    <h1>Welcome to Venrand 👋</h1>
+    <h1>Welcome to Venrand</h1>
 
     <p>
         Learn, build and grow with practical digital skills.
     </p>
 
     <a href="/python" class="button">Start Learning</a>
-    <a href="/python" class="button">Get Started</a>
+    <a href="/login" class="button">Login</a>
 </section>
 
-<section class="section" id="products">
-
+<section class="section">
     <h2>What We Offer</h2>
 
     <div class="cards">
 
         <div class="card">
-            <h3>🐍 Learn Python</h3>
+            <h3>Learn Python</h3>
             <p>
-                Start learning Python programming step by step.
+                Learn Python step by step through practical lessons and exercises.
             </p>
         </div>
 
         <div class="card">
-            <h3>📚 Digital Learning</h3>
+            <h3>Digital Learning</h3>
             <p>
-                Discover useful educational resources and guides.
+                Build useful digital skills that can support your career and business.
             </p>
         </div>
 
         <div class="card">
-            <h3>💻 Digital Products</h3>
+            <h3>Digital Products</h3>
             <p>
-                Explore practical digital products designed to help you learn.
+                Explore practical digital learning products from Venrand.
             </p>
         </div>
 
     </div>
-
 </section>
 
 <footer>
@@ -4131,9 +4130,100 @@ def login():
         username = request.form.get("username")
         password = request.form.get("password")
 
-        if username == "admin" and password == "1234":
-            return "<h1>Login successful! 🎉</h1><p>Welcome to the management area.</p>"
+        if username == "admin" and password == "1234":            
+ 
+            return """
 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Venrand Management Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #222;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            padding: 25px 15px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .logout {
+            display: inline-block;
+            background: #c0392b;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🐍 Venrand Management</h1>
+    <p>Welcome to your management dashboard.</p>
+</header>
+
+<main>
+
+    <div class="card">
+        <h2>📚 Python Academy</h2>
+        <p>15 Python lessons are currently available.</p>
+        <p><strong>Status:</strong> Active</p>
+    </div>
+
+    <div class="card">
+        <h2>🏆 Certificates</h2>
+        <p>Certificate system is active.</p>
+    </div>
+
+    <div class="card">
+        <h2>🌐 Website</h2>
+        <p>Your Venrand Academy website is online and accessible.</p>
+    </div>
+
+    <div class="card">
+        <h2>⚙️ Management</h2>
+        <p>More management features can be added here later.</p>
+
+        <a class="logout" href="/login">Logout</a>
+    </div>
+
+</main>
+
+</body>
+</html>
+"""
         return "<h1>Login failed ❌</h1><p>Wrong username or password.</p>"
 
     return """
